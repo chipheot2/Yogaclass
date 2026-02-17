@@ -884,13 +884,13 @@
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a class="logo" href="#" onclick="showPage('home')">Wildsoul <span>Yoga</span></a>
+  <a class="logo" href="#" onclick="showPage('home'); return false;">Wildsoul <span>Yoga</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#" onclick="showPage('home')">Home</a></li>
-    <li><a href="#" onclick="showPage('personal')">Personal Class</a></li>
-    <li><a href="#" onclick="showPage('online')">Online Class</a></li>
-    <li><a href="#" onclick="showPage('about')">About Me</a></li>
-    <li><a href="#" onclick="showPage('contact')">Contact Me</a></li>
+    <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+    <li><a href="#" onclick="showPage('personal'); return false;">Personal Class</a></li>
+    <li><a href="#" onclick="showPage('online'); return false;">Online Class</a></li>
+    <li><a href="#" onclick="showPage('about'); return false;">About Me</a></li>
+    <li><a href="#" onclick="showPage('contact'); return false;">Contact Me</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -1191,7 +1191,7 @@
           <div class="ci-icon">✉️</div>
           <div class="ci-text">
             <div class="ci-label">Email</div>
-            hello@wildsoulsyoga.com
+            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6a020f0606052a1d03060e19051f061913050d0b44090507">[email&#160;protected]</a>
           </div>
         </div>
         <div class="contact-info-item">
@@ -1259,11 +1259,11 @@
     <div>
       <div class="footer-title">Navigate</div>
       <ul class="footer-links">
-        <li><a href="#" onclick="showPage('home')">Home</a></li>
-        <li><a href="#" onclick="showPage('personal')">Personal Classes</a></li>
-        <li><a href="#" onclick="showPage('online')">Online Classes</a></li>
-        <li><a href="#" onclick="showPage('about')">About Me</a></li>
-        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+        <li><a href="#" onclick="showPage('personal'); return false;">Personal Classes</a></li>
+        <li><a href="#" onclick="showPage('online'); return false;">Online Classes</a></li>
+        <li><a href="#" onclick="showPage('about'); return false;">About Me</a></li>
+        <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
       </ul>
     </div>
 
@@ -1274,7 +1274,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function showPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById(id).classList.add('active');
@@ -1290,13 +1290,4 @@
   function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target.querySelector('button');
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = 'var(--earth)';
-    setTimeout(() => {
-      btn.textContent = 'Send Message';
-      btn.style.background = '';
-    }, 3000);
-  }
-
-  // Scroll effect on nav
-  window.addEventListener('scroll', (
+    btn.textContent = '✓ Mes
