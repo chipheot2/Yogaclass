@@ -1274,13 +1274,18 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   function showPage(id) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    // close mobile menu
+    document.querySelectorAll('.page').forEach(function(p) {
+      p.classList.remove('active');
+    });
+    var target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+    }
+    window.scrollTo(0, 0);
     document.getElementById('navLinks').classList.remove('open');
+    return false;
   }
 
   function toggleMenu() {
@@ -1289,5 +1294,24 @@
 
   function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = '✓ Mes
+    var btn = e.target.querySelector('button');
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = 'var(--earth)';
+    setTimeout(function() {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+    }, 3000);
+  }
+
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('navbar');
+    if (window.scrollY > 30) {
+      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.06)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
